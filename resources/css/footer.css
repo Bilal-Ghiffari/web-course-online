@@ -1,0 +1,16 @@
+.footer-2-4 .list-footer li a:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
+.footer-2-4 .border-color {
+    color: #999999;
+}
+.footer-2-4 .footer-link:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
+.footer-2-4 .social-media-c:hover circle,
+.footer-2-4 .social-media-p:hover path {
+    fill: #ffffff;
+    cursor: pointer;
+}
