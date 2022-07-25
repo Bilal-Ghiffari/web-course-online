@@ -1,10 +1,10 @@
 import React from "react";
-import Navbar from "../parts/Navbar";
-import Header from "../parts/Header";
-import Content from "../parts/Content";
-import Footer from "../parts/Footer";
+import Navbar from "./parts/Navbar";
+import Header from "./parts/Header";
+import Content from "./parts/Content";
+import Footer from "./parts/Footer";
 
-export default function Unauthenticated() {
+export default function GuestUser() {
     return (
         <>
             <section className="h-full w-full border-box transition: 0.3s; transition-all duration-500 linear bg-black">

@@ -16,10 +16,8 @@
 }
 
 .content-2-4 .btn-fill {
-    background-image: linear-gradient(
-        rgba(208, 254, 123, 1),
-        rgba(163, 252, 158, 1)
-    );
+    background-image: linear-gradient(rgba(208, 254, 123, 1),
+            rgba(163, 252, 158, 1));
     transition: 0.2s;
 }
 
@@ -36,4 +34,26 @@
 
 .content-2-4 .text-gray {
     color: #999999;
+}
+
+.content-3-4 .circle {
+    background-image: linear-gradient(rgba(181, 225, 111, 1),
+            rgba(168, 248, 150, 1));
+    color: #000000;
+}
+
+.content-3-4 .caption {
+    color: #999999;
+}
+
+.content-3-4 .btn-fill {
+    background-image: linear-gradient(rgba(181, 225, 111, 1),
+            rgba(168, 248, 150, 1));
+    transition: 0.3s;
+}
+
+.content-3-4 .btn-fill:hover {
+    background-image: linear-gradient(#b5e16f, #b5e16f);
+    color: #121212;
+    transition: 0.3s;
 }

@@ -1,5 +1,34 @@
-import { Link } from "@inertiajs/inertia-react";
+import { useEffect, useState } from "react";
+import { Link, useForm } from "@inertiajs/inertia-react";
+import Input from "@/Components/Input";
+import Label from "@/Components/Label";
+import Button from "@/Components/Button";
+
 export default function Register() {
+    const { data, setData, post, processing, reset, errors } = useForm({
+        name: "",
+        email: "",
+        password: "",
+        password_confirmation: "",
+    });
+
+    const [seePassword, setSeePassword] = useState(false);
+
+    useEffect(() => {
+        return () => {
+            reset("password", "password_confirmation");
+        };
+    }, []);
+
+    const handleInputValue = (e) => {
+        setData(e.target.name, e.target.value);
+    };
+
+    const submitForm = (e) => {
+        e.preventDefault();
+        post(route("register"));
+    };
+
     return (
         <section className="h-full w-full border-box transition-all duration-500 linear bg-[#232130]">
             <div className="content-3-6">
@@ -27,27 +56,38 @@ export default function Register() {
                                 <br />
                                 registered on the website.
                             </p>
-                            <form className="mt-6">
+                            <form className="mt-6" onSubmit={submitForm}>
                                 <div className="mb-7">
-                                    <label className="block text-lg font-medium text-medium-white">
-                                        Name
-                                    </label>
+                                    <Label
+                                        forInput={"name"}
+                                        value={"Name"}
+                                        className={
+                                            "block text-lg font-medium text-medium-white"
+                                        }
+                                    />
                                     <div className="flex w-full px-5 py-2 mt-3 text-base font-light rounded-xl input">
-                                        <input
-                                            type="email"
-                                            name=""
-                                            id=""
-                                            placeholder="Your Email Address"
-                                            className="w-full focus:outline-none text-base font-light bg-medium-black-2"
-                                            autocomplete
+                                        <Input
+                                            type={"text"}
+                                            name={"name"}
+                                            value={data.name}
+                                            className={
+                                                "w-full focus:outline-none text-base font-light bg-medium-black-2"
+                                            }
+                                            placeholder={"Your FullName"}
+                                            handleChange={handleInputValue}
+                                            isFocused={true}
                                             required
                                         />
                                     </div>
                                 </div>
                                 <div className="mb-7">
-                                    <label className="block text-lg font-medium text-medium-white">
-                                        Email
-                                    </label>
+                                    <Label
+                                        forInput={"email"}
+                                        value={"Email"}
+                                        className={
+                                            "block text-lg font-medium text-medium-white"
+                                        }
+                                    />
                                     <div className="flex w-full px-5 py-2 mt-3 text-base font-light rounded-xl input">
                                         <svg
                                             className="mr-4 icon"
@@ -64,21 +104,27 @@ export default function Register() {
                                                 fill="#4E4B62"
                                             />
                                         </svg>
-                                        <input
-                                            type="email"
-                                            name=""
-                                            id=""
-                                            placeholder="Your Email Address"
-                                            className="w-full focus:outline-none text-base font-light bg-medium-black-2"
-                                            autocomplete
+                                        <Input
+                                            type={"email"}
+                                            name={"email"}
+                                            value={data.email}
+                                            className={
+                                                "w-full focus:outline-none text-base font-light bg-medium-black-2"
+                                            }
+                                            placeholder={"Your Email Address"}
+                                            handleChange={handleInputValue}
                                             required
                                         />
                                     </div>
                                 </div>
                                 <div className="mt-4">
-                                    <label className="block text-lg font-medium text-medium-white">
-                                        Confirm Password
-                                    </label>
+                                    <Label
+                                        forInput={"password"}
+                                        value={"Password"}
+                                        className={
+                                            "block text-lg font-medium text-medium-white"
+                                        }
+                                    />
                                     <div className="flex items-center w-full px-5 py-2 mt-3 text-base font-light rounded-xl input">
                                         <svg
                                             className="mr-4 icon"
@@ -95,18 +141,29 @@ export default function Register() {
                                                 fill="#4E4B62"
                                             />
                                         </svg>
-                                        <input
-                                            type="password"
-                                            name=""
-                                            id="password-content-3-6"
-                                            placeholder="Your Password"
-                                            minlength="6"
-                                            className="w-full focus:outline-none text-base font-light bg-medium-black-2"
+                                        <Input
+                                            type={`${
+                                                !seePassword
+                                                    ? "password"
+                                                    : "text"
+                                            }`}
+                                            name={"password"}
+                                            value={data.password}
+                                            className={
+                                                "w-full focus:outline-none text-base font-light bg-medium-black-2"
+                                            }
+                                            placeholder={"Your Password"}
+                                            handleChange={handleInputValue}
                                             required
                                         />
                                         <div>
                                             <svg
                                                 className="ml-3 cursor-pointer"
+                                                onClick={() =>
+                                                    setSeePassword(
+                                                        (prev) => !prev
+                                                    )
+                                                }
                                                 width="20"
                                                 height="14"
                                                 viewBox="0 0 20 14"
@@ -124,9 +181,13 @@ export default function Register() {
                                     </div>
                                 </div>
                                 <div className="mt-4">
-                                    <label className="block text-lg font-medium text-medium-white">
-                                        Password
-                                    </label>
+                                    <Label
+                                        forInput={"password_confirmation"}
+                                        value={"Confirm Password"}
+                                        className={
+                                            "block text-lg font-medium text-medium-white"
+                                        }
+                                    />
                                     <div className="flex items-center w-full px-5 py-2 mt-3 text-base font-light rounded-xl input">
                                         <svg
                                             className="mr-4 icon"
@@ -143,32 +204,19 @@ export default function Register() {
                                                 fill="#4E4B62"
                                             />
                                         </svg>
-                                        <input
-                                            type="password"
-                                            name=""
-                                            id="password-content-3-6"
-                                            placeholder="Your Password"
-                                            minlength="6"
-                                            className="w-full focus:outline-none text-base font-light bg-medium-black-2"
+                                        <Input
+                                            type={"password"}
+                                            name={"password_confirmation"}
+                                            value={data.password_confirmation}
+                                            className={
+                                                "w-full focus:outline-none text-base font-light bg-medium-black-2"
+                                            }
+                                            placeholder={
+                                                "Your Confirm Password"
+                                            }
+                                            handleChange={handleInputValue}
                                             required
                                         />
-                                        <div>
-                                            <svg
-                                                className="ml-3 cursor-pointer"
-                                                width="20"
-                                                height="14"
-                                                viewBox="0 0 20 14"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    fillRule="evenodd"
-                                                    clipRule="evenodd"
-                                                    d="M0 7C0.555556 4.66667 3.33333 0 10 0C16.6667 0 19.4444 4.66667 20 7C19.4444 9.52778 16.6667 14 10 14C3.31853 14 0.555556 9.13889 0 7ZM10 5C8.89543 5 8 5.89543 8 7C8 8.10457 8.89543 9 10 9C11.1046 9 12 8.10457 12 7C12 6.90536 11.9934 6.81226 11.9807 6.72113C12.2792 6.89828 12.6277 7 13 7C13.3608 7 13.6993 6.90447 13.9915 6.73732C13.9971 6.82415 14 6.91174 14 7C14 9.20914 12.2091 11 10 11C7.79086 11 6 9.20914 6 7C6 4.79086 7.79086 3 10 3C10.6389 3 11.2428 3.14979 11.7786 3.41618C11.305 3.78193 11 4.35535 11 5C11 5.09464 11.0066 5.18773 11.0193 5.27887C10.7208 5.10171 10.3723 5 10 5Z"
-                                                    fill="#4E4B62"
-                                                />
-                                            </svg>
-                                        </div>
                                     </div>
                                 </div>
                                 <div className="mt-3 text-right">
@@ -179,12 +227,15 @@ export default function Register() {
                                         Forgot Password?
                                     </a>
                                 </div>
-                                <button
-                                    type="submit"
-                                    className="btn-fill block w-full px-4 py-3 mt-9 font-medium text-xl text-white transition duration-500 ease-in-out transform rounded-xl hover:bg-gray-800 hover:to-black focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2"
+                                <Button
+                                    type={"submit"}
+                                    processing={processing}
+                                    className={
+                                        "btn-fill block w-full px-4 py-3 mt-9 font-medium text-xl text-white transition duration-500 ease-in-out transform rounded-xl hover:bg-gray-800 hover:to-black focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2"
+                                    }
                                 >
                                     Log In To My Account
-                                </button>
+                                </Button>
                             </form>
                             <p className="mt-8 text-center text-sm text-gray">
                                 Don't have an account yet?

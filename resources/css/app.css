@@ -42,3 +42,8 @@ select:focus .footer-2-4 .list-footer li a {
     border-color: transparent;
     --tw-ring-color: transparent;
 }
+
+.btn.focus\:ring-2:focus {
+    --tw-ring-offset-shadow: transparent;
+    --tw-ring-shadow: transparent;
+}

@@ -1,6 +1,29 @@
-import { Link } from "@inertiajs/inertia-react";
+import { useEffect } from "react";
+import { Link, useForm } from "@inertiajs/inertia-react";
+import Input from "@/Components/Input";
+import Label from "@/Components/Label";
+import Button from "@/Components/Button";
 
 export default function Login() {
+    const { data, setData, post, processing, reset, errors } = useForm({
+        email: "",
+        password: "",
+    });
+
+    useEffect(() => {
+        return () => {
+            reset("password");
+        };
+    }, []);
+
+    const handleInputValue = (e) => {
+        setData(e.target.name, e.target.value);
+    };
+
+    const submitForm = (e) => {
+        e.preventDefault();
+        post(route("login"));
+    };
     return (
         <section className="h-full w-full border-box transition-all duration-500 linear bg-[#232130]">
             <div className="content-3-6">
@@ -28,16 +51,15 @@ export default function Login() {
                                 <br />
                                 registered on the website.
                             </p>
-                            <form
-                                className="mt-6"
-                                action="#"
-                                method="POST"
-                                x-data="{ show: false }"
-                            >
+                            <form className="mt-6" onSubmit={submitForm}>
                                 <div className="mb-7">
-                                    <label className="block text-lg font-medium text-medium-white">
-                                        Email Address
-                                    </label>
+                                    <Label
+                                        className={
+                                            "block text-lg font-medium text-medium-white"
+                                        }
+                                        forInput={"email"}
+                                        value={"Email"}
+                                    />
                                     <div className="flex w-full px-5 py-2 mt-3 text-base font-light rounded-xl input">
                                         <svg
                                             className="mr-4 icon"
@@ -54,21 +76,28 @@ export default function Login() {
                                                 fill="#4E4B62"
                                             />
                                         </svg>
-                                        <input
+                                        <Input
                                             type="email"
-                                            name=""
-                                            id=""
-                                            placeholder="Your Email Address"
-                                            className="w-full focus:outline-none text-base font-light bg-medium-black-2"
-                                            autocomplete
+                                            name={"email"}
+                                            value={data.email}
+                                            className={
+                                                "w-full focus:outline-none text-base font-light bg-medium-black-2"
+                                            }
+                                            placeholder={"Your Email Address"}
+                                            handleChange={handleInputValue}
+                                            isFocused={true}
                                             required
                                         />
                                     </div>
                                 </div>
                                 <div className="mt-4">
-                                    <label className="block text-lg font-medium text-medium-white">
-                                        Password
-                                    </label>
+                                    <Label
+                                        className={
+                                            "block text-lg font-medium text-medium-white"
+                                        }
+                                        forInput={"password"}
+                                        value={"Password"}
+                                    />
                                     <div className="flex items-center w-full px-5 py-2 mt-3 text-base font-light rounded-xl input">
                                         <svg
                                             className="mr-4 icon"
@@ -85,13 +114,15 @@ export default function Login() {
                                                 fill="#4E4B62"
                                             />
                                         </svg>
-                                        <input
+                                        <Input
                                             type="password"
-                                            name=""
-                                            id="password-content-3-6"
-                                            placeholder="Your Password"
-                                            minlength="6"
-                                            className="w-full focus:outline-none text-base font-light bg-medium-black-2"
+                                            name={"password"}
+                                            value={data.password}
+                                            className={
+                                                "w-full focus:outline-none text-base font-light bg-medium-black-2"
+                                            }
+                                            placeholder={"Your Password"}
+                                            handleChange={handleInputValue}
                                             required
                                         />
                                     </div>
@@ -104,12 +135,15 @@ export default function Login() {
                                         Forgot Password?
                                     </a>
                                 </div>
-                                <button
+                                <Button
                                     type="submit"
-                                    className="btn-fill block w-full px-4 py-3 mt-9 font-medium text-xl text-white transition duration-500 ease-in-out transform rounded-xl hover:bg-gray-800 hover:to-black focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2"
+                                    processing={processing}
+                                    className={
+                                        "btn-fill block w-full px-4 py-3 mt-9 font-medium text-xl text-white transition duration-500 ease-in-out transform rounded-xl hover:bg-gray-800 hover:to-black focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2"
+                                    }
                                 >
                                     Log In To My Account
-                                </button>
+                                </Button>
                             </form>
                             <p className="mt-8 text-center text-sm text-gray">
                                 Don't have an account yet?
