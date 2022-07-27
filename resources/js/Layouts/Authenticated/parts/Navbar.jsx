@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import ListMenuNavbar from "./partikel/ListMenuNavbar";
 import LinkMenuDropdown from "./partikel/LinkMenuDropdown";
 
-export default function Navbar({ auth }) {
+export default function Navbar({ authName }) {
     const [toggleMainMenu, setToggleMainMenu] = useState(false);
     const [dropDownOpen, setDropDownOpen] = useState(true);
 
@@ -60,7 +60,7 @@ export default function Navbar({ auth }) {
                 {/* desktop */}
                 <div className="hidden lg:inline-flex">
                     <span className="text-white text-sm font-medium my-3 mr-5">
-                        Welcome, {auth.name}
+                        Welcome, {authName?.name}
                     </span>
                 </div>
                 <div

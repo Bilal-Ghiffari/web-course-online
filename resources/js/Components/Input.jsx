@@ -6,11 +6,13 @@ export default function Input({
     value,
     id,
     className,
+    variant,
     autoComplete,
     required,
     isFocused,
     handleChange,
     placeholder,
+    isError,
 }) {
     const input = useRef();
 
@@ -27,7 +29,9 @@ export default function Input({
                 name={name}
                 value={value}
                 id={id}
-                className={className}
+                className={`${className} input-${variant} ${
+                    isError && "input-error"
+                }`}
                 ref={input}
                 autoComplete={autoComplete}
                 required={required}

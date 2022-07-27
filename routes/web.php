@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\User\UserDashboardController;
+use App\Http\Controllers\Admin\CourseController as AdminCourseController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -26,6 +27,11 @@ Route::middleware(['auth', 'role:user'])
         Route::get('/', [UserDashboardController::class, 'index'])
         ->name('index');
     });
-
+Route::middleware(['auth', 'role:admin'])
+    ->prefix('dashboard')
+    ->name('admin.dashboard.')
+    ->group(function() {
+        Route::resource('course', AdminCourseController::class);
+    });
 
 require __DIR__.'/auth.php';

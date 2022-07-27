@@ -10,7 +10,7 @@ export default function Authenticated({ auth }) {
         <>
             <section className="h-full w-full border-box transition: 0.3s; transition-all duration-500 linear bg-black">
                 <div className="header-2-4">
-                    <Navbar auth={auth?.user} />
+                    <Navbar authName={auth?.user} />
                     <Header />
                 </div>
             </section>
