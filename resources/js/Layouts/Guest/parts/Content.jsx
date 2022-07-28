@@ -3,7 +3,7 @@ import FastCourse from "@/Layouts/Authenticated/partikelGlobal/Content3";
 
 export default function Content() {
     return (
-        <div className="content-2-4">
+        <div className="content-2-4 mt-[100px]">
             <Benefit />
             <FastCourse />
         </div>

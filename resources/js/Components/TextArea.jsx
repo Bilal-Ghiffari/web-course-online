@@ -1,4 +1,10 @@
-export default function TextArea({ isError, name, id, handleChange }) {
+export default function TextArea({
+    isError,
+    name,
+    id,
+    handleChange,
+    defaultValue,
+}) {
     return (
         <textarea
             name={name}
@@ -9,6 +15,7 @@ export default function TextArea({ isError, name, id, handleChange }) {
                 isError && "input-error"
             }`}
             placeholder="Your description"
+            defaultValue={defaultValue}
         ></textarea>
     );
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Course\Edit;
 use App\Http\Requests\Admin\Course\Store;
 use App\Models\Course;
 use Illuminate\Http\Request;
@@ -19,7 +20,10 @@ class CourseController extends Controller
      */
     public function index()
     {
-        return inertia('Admin/Course/index');
+        $course = Course::all();
+        return inertia('Admin/Course/index', [
+            "course" => $course
+        ]);
     }
 
     /**
@@ -70,7 +74,9 @@ class CourseController extends Controller
      */
     public function edit(Course $course)
     {
-        //
+        return inertia('Admin/Course/Edit', [
+            "course" => $course
+        ]);
     }
 
     /**
@@ -80,9 +86,29 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Course $course)
+    public function update(Edit $request, Course $course)
     {
-        //
+        $data = $request->validated();
+
+        if($request->file('thumbnail')){
+            $data['thumbnail'] = Storage::disk('public')->put('course', $request->file('thumbnail'));
+            Storage::disk('public')->delete($course->thumbnail);
+        }else {
+            $data['thumbnail'] = $course->thumbnail;
+        }
+
+        if($request->file('avatar')){
+            $data['avatar'] = Storage::disk('public')->put('course', $request->file('avatar'));
+            Storage::disk('public')->delete($course->avatar);
+        }else {
+            $data['avatar'] = $course->avatar;
+        }
+
+        $data['slug'] = Str::slug($data['name'], '-');
+
+        $course->update($data);
+        
+        return redirect(route('admin.dashboard.course.index'));
     }
 
     /**

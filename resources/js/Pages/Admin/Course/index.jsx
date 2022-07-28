@@ -4,7 +4,7 @@ import Footer from "@/Layouts/Authenticated/parts/Footer";
 import Button from "@/Components/Button";
 import ListCourse from "./ListCourse";
 
-export default function Course({ auth }) {
+export default function Course({ auth, course }) {
     return (
         <>
             <section className="h-full w-full border-box transition: 0.3s; transition-all duration-500 linear bg-black">
@@ -20,7 +20,7 @@ export default function Course({ auth }) {
                             </Button>
                         </Link>
                     </div>
-                    <ListCourse />
+                    <ListCourse data={course} />
                 </div>
             </section>
             <section className="h-full pt-20 pb-12 lg:px-24 md:px-16 sm:px-8 px-4 transition-all duration-500 linear bg-[#000000]">

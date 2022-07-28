@@ -13,6 +13,7 @@ export default function Input({
     handleChange,
     placeholder,
     isError,
+    defaultValue,
 }) {
     const input = useRef();
 
@@ -37,6 +38,7 @@ export default function Input({
                 required={required}
                 onChange={(e) => handleChange(e)}
                 placeholder={placeholder}
+                defaultValue={defaultValue}
             />
         </div>
     );

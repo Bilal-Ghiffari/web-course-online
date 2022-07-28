@@ -1,4 +1,5 @@
-import { Link, Head, useForm } from "@inertiajs/inertia-react";
+import { Inertia } from "@inertiajs/inertia";
+import { Head, useForm } from "@inertiajs/inertia-react";
 import Navbar from "@/Layouts/Authenticated/parts/Navbar";
 import Footer from "@/Layouts/Authenticated/parts/Footer";
 import Button from "@/Components/Button";
@@ -7,16 +8,9 @@ import Label from "@/Components/Label";
 import TextArea from "@/Components/TextArea";
 import ValidationErrors from "@/Components/ValidationErrors";
 
-export default function Created({ auth }) {
-    const { setData, post, processing, errors } = useForm({
-        name: "",
-        mentor: "",
-        video_url: "",
-        thumbnail: "",
-        avatar: "",
-        price: "",
-        lesson: "",
-        body: "",
+export default function Edit({ auth, course }) {
+    const { data, setData, processing, errors } = useForm({
+        ...course,
     });
 
     const onHandleChange = (e) => {
@@ -28,7 +22,18 @@ export default function Created({ auth }) {
 
     const submit = (e) => {
         e.preventDefault();
-        post(route("admin.dashboard.course.store"));
+        if (data?.thumbnail === course?.thumbnail) {
+            delete data?.thumbnail;
+        }
+
+        if (data?.avatar === course?.avatar) {
+            delete data?.avatar;
+        }
+
+        Inertia.post(route("admin.dashboard.course.update", course?.id), {
+            _method: "PUT",
+            ...data,
+        });
     };
 
     return (
@@ -56,6 +61,7 @@ export default function Created({ auth }) {
                                 variant="primary-outline"
                                 className={"rounded-2xl py-[13px] px-7 w-full"}
                                 handleChange={onHandleChange}
+                                defaultValue={course?.name}
                                 placeholder="Enter the name of the name"
                                 isError={errors.name}
                             />
@@ -72,6 +78,7 @@ export default function Created({ auth }) {
                                 variant="primary-outline"
                                 className={"rounded-2xl py-[13px] px-7 w-full"}
                                 handleChange={onHandleChange}
+                                defaultValue={course?.mentor}
                                 placeholder="Enter the category of the mentor"
                                 isError={errors.mentor}
                             />
@@ -88,6 +95,7 @@ export default function Created({ auth }) {
                                 variant="primary-outline"
                                 className={"rounded-2xl py-[13px] px-7 w-full"}
                                 handleChange={onHandleChange}
+                                defaultValue={course?.video_url}
                                 placeholder="Enter the video url of the course"
                                 isError={errors.video_url}
                             />
@@ -97,6 +105,11 @@ export default function Created({ auth }) {
                                 className={
                                     "mt-4 text-white text-base block mb-2"
                                 }
+                            />
+                            <img
+                                src={`/storage/${course?.thumbnail}`}
+                                alt="thumbnail"
+                                className="w-40"
                             />
                             <Input
                                 type="file"
@@ -115,6 +128,11 @@ export default function Created({ auth }) {
                                 className={
                                     "mt-4 text-white text-base block mb-2"
                                 }
+                            />
+                            <img
+                                src={`/storage/${course?.avatar}`}
+                                alt="avatar"
+                                className="w-40"
                             />
                             <Input
                                 type="file"
@@ -140,6 +158,7 @@ export default function Created({ auth }) {
                                 variant="primary-outline"
                                 className={"rounded-2xl py-[13px] px-7 w-full"}
                                 handleChange={onHandleChange}
+                                defaultValue={course?.price}
                                 placeholder="Enter the price of the course"
                                 isError={errors.price}
                             />
@@ -156,6 +175,7 @@ export default function Created({ auth }) {
                                 variant="primary-outline"
                                 className={"rounded-2xl py-[13px] px-7 w-full"}
                                 handleChange={onHandleChange}
+                                defaultValue={course?.lesson}
                                 placeholder="Enter the leson of the course"
                                 isError={errors.lesson}
                             />
@@ -170,6 +190,7 @@ export default function Created({ auth }) {
                                 name={"body"}
                                 id={"body"}
                                 handleChange={onHandleChange}
+                                defaultValue={course?.body}
                                 isError={errors.body}
                             ></TextArea>
 
