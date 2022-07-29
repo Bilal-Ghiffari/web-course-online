@@ -1,0 +1,23 @@
+HTML & CSS 5
+https://youtu.be/hu-q2zYwEYs
+Eko Prawito
+HTML5 adalah bahasa markup yang digunakan untuk membangun suatu tampilan pada Website. HTML5 ini peran nya seperti pondasi utama ketika Website sedang berada pada tahap Development. Ketika kita ingin membuat sebuah Header, Body, dan juga Footer pada Website maka kita perlu menggunakan bahasa markup ini.
+15
+
+UI/UX Design
+https://youtu.be/c9Wg6Cb_YlU
+Alexander
+Information Architecture, Wireframing dan Visual Design merupakan beberapa komponen inti dari UI/UX Design. Dengan memperhatikan komponen inti dari UI/UX Design kamu dapat meningkatkan kualitas dan kegunaan dari produk yang kita bangun.
+20
+
+Full-Stack Javascript Developer
+https://youtu.be/tkGTpdtJeeM
+Martin
+MERN Stack adalah bagian dari Full-Stack Web Developer yang difokuskan kepada JavaScript (Full-Stack JavaScript Developer). M untuk MongoDB, E untuk ExpressJS, R untuk ReactJS, dan N untuk NodeJS.
+30
+
+Write an Incredible Resume
+https://youtu.be/Tt08KmFfIYQ
+Jeff Su
+Sebagian besar saran resume dari internet bersifat subjektif karena tidak ada "satu ukuran untuk semua". Tetapi menggunakan analisis Austin Belcak terhadap 125.484 resume, saya membagikan 5 Aturan Emas tentang cara Menulis Resume yang Luar Biasa pada tahun 2022. Baik Anda membuat resume untuk pekerjaan pertama Anda, atau memperbaiki resume bagus yang telah Anda gunakan selama bertahun-tahun, sangat penting untuk mendapatkan prinsip-prinsip dasar sebelum beralih ke tip menulis resume yang lebih bagus.
+8

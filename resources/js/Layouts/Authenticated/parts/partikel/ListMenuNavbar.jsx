@@ -25,11 +25,12 @@ export default function ListMenuNavbar({
             >
                 Home
             </a>
+
             <a
                 className="text-lg font-light leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative"
                 href="#"
             >
-                Feature
+                RoadMap
             </a>
             <a
                 className="text-lg font-light leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative"

@@ -5,6 +5,7 @@
 @import "header.css";
 @import "content.css";
 @import "footer.css";
+@import "videojs.css";
 
 [type="text"],
 [type="email"],

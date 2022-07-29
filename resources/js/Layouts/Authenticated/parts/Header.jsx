@@ -7,9 +7,9 @@ export default function Header() {
                         FREE 30 DAY TRIAL
                     </p>
                     <h1 className="text-white title-font sm:text-5xl lg:text-6xl text-4xl mb-8 font-semibold sm:leading-tight">
-                        The best way
+                        Jalan terbaik
                         <br className="lg:block hidden" />
-                        to organize your online learning
+                        untuk mengatur pembelajaran online Anda
                     </h1>
                     <div className="inline-block items-center mx-auto lg:mx-0 lg:flex justify-center lg:space-x-8 md:space-x-2 sm:space-x-3 space-x-0">
                         <button className="btn-try inline-flex font-semibold text-black text-base py-4 px-6 rounded-xl mb-4 lg:mb-0 md:mb-0 focus:outline-none box-shadow">

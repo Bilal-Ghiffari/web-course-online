@@ -48,6 +48,19 @@ class CourseController extends Controller
         $data['thumbnail'] = Storage::disk('public')->put('course', $request->file('thumbnail'));
         $data['avatar'] = Storage::disk('public')->put('course', $request->file('avatar'));
         $data['slug'] = Str::slug($data['name'], '-');
+        $data['video_url'] = json_encode([
+            $data['video_url'], 
+            $data['course_video_url1'],
+            $data['course_video_url2'],
+            $data['course_video_url3'],
+            $data['course_video_url4'],
+            $data['course_video_url5'],
+            $data['course_video_url6'],
+            $data['course_video_url7'],
+            $data['course_video_url8'],
+            $data['course_video_url9'],
+            $data['course_video_url10'],
+        ]);
 
         Course::create($data);
 

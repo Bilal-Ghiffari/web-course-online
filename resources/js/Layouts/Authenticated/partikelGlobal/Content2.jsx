@@ -10,7 +10,7 @@ export default function Benefit() {
             </div>
             <div className="lg:w-1/2 w-full flex flex-col lg:items-start items-center lg:text-left text-center">
                 <h2 className="md:text-4xl text-3xl text-white font-semibold mb-10 tracking-tight">
-                    3 Keys Benefit
+                    3 Kunci Manfaat
                 </h2>
                 <ul>
                     <li className="mb-8">
@@ -18,12 +18,13 @@ export default function Benefit() {
                             <span className="circle h-12 w-12 text-xl flex items-center justify-center lg:mr-5 lg:mb-0 mb-5 rounded-full">
                                 1
                             </span>
-                            Trusted Mentor
+                            Mentor Tepercaya
                         </h4>
                         <p className="text-base leading-7 tracking-wide caption">
-                            We have provided highly experienced mentors
+                            Kami telah menyediakan mentor yang sangat
+                            berpengalaman
                             <br className="sm:inline-block hidden" />
-                            for several years.
+                            selama beberapa tahun.
                         </p>
                     </li>
                     <li className="mb-8">
@@ -31,12 +32,14 @@ export default function Benefit() {
                             <span className="circle h-12 w-12 text-xl flex items-center justify-center lg:mr-5 lg:mb-0 mb-5 rounded-full">
                                 2
                             </span>
-                            Access Forever
+                            Akses Selamanya
                         </h4>
                         <p className="text-base leading-7 tracking-wide caption">
-                            Are you busy at work so it's hard to consult? don't
+                            Apakah Anda sibuk berkuliah dan bekerja sehingga
+                            sulit untuk berkonsultasi?
                             <br className="sm:inline-block hidden" />
-                            worry because you can access anytime.
+                            jangan khawatir karena Anda dapat mengakses kapan
+                            saja.
                         </p>
                     </li>
                     <li className="mb-16">
@@ -44,12 +47,12 @@ export default function Benefit() {
                             <span className="circle h-12 w-12 text-xl flex items-center justify-center lg:mr-5 lg:mb-0 mb-5 rounded-full">
                                 3
                             </span>
-                            Halfpenny
+                            Sangat murah
                         </h4>
                         <p className="text-base leading-7 tracking-wide caption">
-                            We provide economical packages for those of you
+                            Kami menyediakan paket hemat bahkan free untuk anda
                             <br className="sm:inline-block hidden" />
-                            who are still in school or workers.
+                            yang masih sekolah atau pekerja.
                         </p>
                     </li>
                 </ul>

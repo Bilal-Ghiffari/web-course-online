@@ -19,6 +19,7 @@ export default function GuestUser({ course }) {
                     <div className="flex-wrap justify-start items-center -mx-4 md:flex">
                         {course.map((item) => (
                             <Course
+                                routeName={route("login")}
                                 image={item.thumbnail}
                                 avatar={item?.avatar}
                                 name={item.name}

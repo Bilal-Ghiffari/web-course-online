@@ -6,12 +6,23 @@ import Input from "@/Components/Input";
 import Label from "@/Components/Label";
 import TextArea from "@/Components/TextArea";
 import ValidationErrors from "@/Components/ValidationErrors";
+import InputCourseUrl from "./InputCourseUrl";
 
 export default function Created({ auth }) {
     const { setData, post, processing, errors } = useForm({
         name: "",
         mentor: "",
         video_url: "",
+        course_video_url1: "",
+        course_video_url2: "",
+        course_video_url3: "",
+        course_video_url4: "",
+        course_video_url5: "",
+        course_video_url6: "",
+        course_video_url7: "",
+        course_video_url8: "",
+        course_video_url9: "",
+        course_video_url10: "",
         thumbnail: "",
         avatar: "",
         price: "",
@@ -91,6 +102,7 @@ export default function Created({ auth }) {
                                 placeholder="Enter the video url of the course"
                                 isError={errors.video_url}
                             />
+                            <InputCourseUrl onHandleChange={onHandleChange} />
                             <Label
                                 forInput="thumbnail"
                                 value="Thumbnail"

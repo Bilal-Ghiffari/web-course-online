@@ -41,8 +41,12 @@ class AuthenticatedSessionController extends Controller
             return redirect(route("admin.dashboard.course.index"));
         }
 
+        if(Auth::user()->roles->pluck('user')){
+            return redirect(route('user.dashboard.index'));
+        }
+
         // return redirect()->intended(RouteServiceProvider::HOME);
-        return redirect()->route('user.dashboard.index');
+        
     }
 
     /**

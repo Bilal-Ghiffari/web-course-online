@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\User\UserDashboardController;
+use App\Http\Controllers\User\CourseController;
 use App\Http\Controllers\Admin\CourseController as AdminCourseController;
+use App\Http\Controllers\User\CourseContentController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -26,6 +28,12 @@ Route::middleware(['auth', 'role:user'])
     ->group(function() {
         Route::get('/', [UserDashboardController::class, 'index'])
         ->name('index');
+
+        Route::get('course/show/{course:slug}', [CourseController::class, 'show'])
+        ->name('course.show');
+
+        Route::get('course/show/{course:slug}/content/{url}', [CourseContentController::class, 'content'])
+        ->name('course.show.content');
     });
 Route::middleware(['auth', 'role:admin'])
     ->prefix('dashboard')
