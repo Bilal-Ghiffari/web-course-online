@@ -1,5 +1,12 @@
 HTML & CSS 5
 https://youtu.be/hu-q2zYwEYs
+https://youtu.be/mbeT8mpmtHA
+https://youtu.be/YwbIeMlxZAU
+https://youtu.be/D3iEE29ZXRM
+https://youtu.be/FHZn6706e3Q
+https://youtu.be/kGW8Al_cga4
+https://youtu.be/25R1Jl5P7Mw
+https://youtu.be/25R1Jl5P7Mw
 Eko Prawito
 HTML5 adalah bahasa markup yang digunakan untuk membangun suatu tampilan pada Website. HTML5 ini peran nya seperti pondasi utama ketika Website sedang berada pada tahap Development. Ketika kita ingin membuat sebuah Header, Body, dan juga Footer pada Website maka kita perlu menggunakan bahasa markup ini.
 15

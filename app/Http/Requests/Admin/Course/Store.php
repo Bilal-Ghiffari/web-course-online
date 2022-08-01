@@ -45,6 +45,7 @@ class Store extends FormRequest
             'body' => 'required',
             'price' => 'nullable|numeric',
             'lesson' => 'required|numeric',
+            'category' => 'required',
         ];
     }
 }

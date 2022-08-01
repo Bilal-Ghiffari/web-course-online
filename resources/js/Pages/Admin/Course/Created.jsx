@@ -28,6 +28,7 @@ export default function Created({ auth }) {
         price: "",
         lesson: "",
         body: "",
+        category: "",
     });
 
     const onHandleChange = (e) => {
@@ -170,6 +171,22 @@ export default function Created({ auth }) {
                                 handleChange={onHandleChange}
                                 placeholder="Enter the leson of the course"
                                 isError={errors.lesson}
+                            />
+                            <Label
+                                forInput="category"
+                                value="Category"
+                                className={
+                                    "mt-4 text-white text-base block mb-2"
+                                }
+                            />
+                            <Input
+                                type="text"
+                                name="category"
+                                variant="primary-outline"
+                                className={"rounded-2xl py-[13px] px-7 w-full"}
+                                handleChange={onHandleChange}
+                                placeholder="Enter the leson of the course"
+                                isError={errors.category}
                             />
                             <Label
                                 forInput="body"

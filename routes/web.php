@@ -5,6 +5,8 @@ use App\Http\Controllers\User\UserDashboardController;
 use App\Http\Controllers\User\CourseController;
 use App\Http\Controllers\Admin\CourseController as AdminCourseController;
 use App\Http\Controllers\User\CourseContentController;
+use App\Http\Controllers\User\RoadMapController;
+use App\Http\Controllers\User\RoadMapDetailController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -34,6 +36,12 @@ Route::middleware(['auth', 'role:user'])
 
         Route::get('course/show/{course:slug}/content/{url}', [CourseContentController::class, 'content'])
         ->name('course.show.content');
+
+        Route::get('roadmap', [RoadMapController::class, 'roadmap'])
+        ->name('roadmap');
+
+        Route::get('roadmap/{course:category}', [RoadMapDetailController::class, 'journey'])
+        ->name('roadmap.journey');
     });
 Route::middleware(['auth', 'role:admin'])
     ->prefix('dashboard')

@@ -1,4 +1,6 @@
 import { Link } from "@inertiajs/inertia-react";
+import { UserMenu } from "./LinkMenu";
+import MenuListLink from "./MenuListLink";
 export default function ListMenuNavbar({
     toggleMainMenu,
     setToggleMainMenu,
@@ -19,37 +21,14 @@ export default function ListMenuNavbar({
                     alt=""
                 />
             </a>
-            <a
-                className="text-lg text-white font-semibold leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative active"
-                href="#"
-            >
-                Home
-            </a>
-
-            <a
-                className="text-lg font-light leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative"
-                href="#"
-            >
-                RoadMap
-            </a>
-            <a
-                className="text-lg font-light leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative"
-                href="#"
-            >
-                Pricing
-            </a>
-            <a
-                className="text-lg font-light leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative"
-                href="#"
-            >
-                About Us
-            </a>
-            <a
-                className="text-lg font-light leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative"
-                href="#"
-            >
-                Contact
-            </a>
+            {UserMenu.map((item, index) => (
+                <MenuListLink
+                    key={`${item.linkName}-${index}`}
+                    name={item.linkName}
+                    link={item.link}
+                    isActive={item.link && route().current(item.link)}
+                />
+            ))}
             {/* mobile */}
             <div className="flex items-center justify-end w-full lg:hidden mt-3">
                 <div className="collapsible-dropdown xl:hidden flex flex-col gap-2 relative">
