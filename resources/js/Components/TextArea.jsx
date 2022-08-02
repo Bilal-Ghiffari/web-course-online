@@ -1,6 +1,7 @@
 export default function TextArea({
     isError,
     name,
+    value,
     id,
     handleChange,
     defaultValue,
@@ -8,6 +9,7 @@ export default function TextArea({
     return (
         <textarea
             name={name}
+            value={value}
             id={id}
             onChange={(e) => handleChange(e)}
             rows="4"

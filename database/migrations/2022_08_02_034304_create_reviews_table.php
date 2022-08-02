@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('roadmaps', function (Blueprint $table) {
+        Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100);
-            $table->string('slug', 100);
-            $table->foreignId('course_id')->constrained();
+            $table->foreignId('user_id')->constrained();
+            $table->text('comment');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roadmaps');
+        Schema::dropIfExists('reviews');
     }
 };

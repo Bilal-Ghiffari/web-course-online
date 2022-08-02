@@ -4,10 +4,11 @@ import Header from "./parts/Header";
 import Content from "./parts/Content";
 import Footer from "./parts/Footer";
 import Course from "./partikelGlobal/Course";
+import ReviewUser from "./partikelGlobal/ReviewUser";
 
-export default function Authenticated({ auth, course }) {
+export default function Authenticated({ auth, course, review }) {
     console.log("auth", auth);
-    console.log("course", course);
+    console.log("review", review);
     return (
         <>
             <section className="h-full w-full border-box transition: 0.3s; transition-all duration-500 linear bg-black">
@@ -41,6 +42,21 @@ export default function Authenticated({ auth, course }) {
                     </div>
                 </div>
                 <Content />
+                <div className="container mx-auto px-4 py-[50px]">
+                    <div className="text-white mb-5 mt-10">
+                        <h2 className="text-3xl font-semibold">
+                            Success Stories
+                        </h2>
+                    </div>
+                    <div className="flex-wrap justify-start items-center -mx-4 md:flex mt-10">
+                        {review?.map((item) => (
+                            <ReviewUser
+                                nameUser={auth?.user?.name}
+                                reviewUser={item?.comment}
+                            />
+                        ))}
+                    </div>
+                </div>
             </section>
             <section className="h-full pt-20 pb-12 lg:px-24 md:px-16 sm:px-8 px-4 transition-all duration-500 linear bg-[#000000]">
                 <Footer />

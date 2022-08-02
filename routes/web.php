@@ -33,6 +33,9 @@ Route::middleware(['auth', 'role:user'])
 
         Route::get('course/show/{course:slug}', [CourseController::class, 'show'])
         ->name('course.show');
+        
+        Route::post('course/show/{course:slug}', [CourseController::class, 'store'])
+        ->name('course.show.store');
 
         Route::get('course/show/{course:slug}/content/{url}', [CourseContentController::class, 'content'])
         ->name('course.show.content');
@@ -42,6 +45,7 @@ Route::middleware(['auth', 'role:user'])
 
         Route::get('roadmap/{course:category}', [RoadMapDetailController::class, 'journey'])
         ->name('roadmap.journey');
+
     });
 Route::middleware(['auth', 'role:admin'])
     ->prefix('dashboard')

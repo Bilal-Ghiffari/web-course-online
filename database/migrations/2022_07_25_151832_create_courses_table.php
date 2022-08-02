@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('name', 100);
             $table->string('slug', 100);
             $table->json('video_url');
-            // $table->json('name_course');
             $table->string('thumbnail');
             $table->string('mentor', 100);
             $table->string('avatar');

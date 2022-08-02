@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Course;
+use App\Models\Review;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
@@ -12,5 +13,17 @@ class CourseController extends Controller
         return inertia('User/Dashboard/Course/Show', [
             "course" => $course 
         ]);
+    }
+
+    public function store(Request $request){
+        $dataReview = $request->validate([
+            'comment' => 'required',
+        ]);
+
+        $dataReview['user_id'] = auth()->user()->id;
+
+        Review::create($dataReview);
+
+        return redirect(route("user.dashboard.index"));
     }
 }
