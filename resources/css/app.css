@@ -50,10 +50,11 @@ select:focus .footer-2-4 .list-footer li a {
 }
 
 .input-primary-outline {
-    @apply bg-[#212121] focus:bg-[#333333] border-[#7bee85] focus:border-[#7bee85];
-    @apply file:bg-[#7bee85] file:text-white text-white file:rounded-md file:p-2;
+    @apply bg-[#212121] focus: bg-[#333333] border-[#7bee85] focus:border-[#7bee85];
+    @apply file: bg-[#7bee85] file:text-white text-white file:rounded-md file:p-2;
 }
 
 .input-error {
     @apply ring ring-red-600;
+    color: #1a1a1b;
 }
