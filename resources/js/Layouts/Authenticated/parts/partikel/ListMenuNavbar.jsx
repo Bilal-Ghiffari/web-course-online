@@ -37,7 +37,7 @@ export default function ListMenuNavbar({
                         onClick={handleTriggerOpen}
                     >
                         <img
-                            src="/images/avatar.png"
+                            src="/images/user-login.png"
                             className="rounded-full object-cover w-full"
                             alt=""
                         />

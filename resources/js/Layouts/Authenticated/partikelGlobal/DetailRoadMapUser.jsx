@@ -18,7 +18,7 @@ export default function DetailRoadMapUser({ dataFE, dataBE }) {
                     </div>
                     <section class="h-full w-full px-8 py-10 bg-black">
                         <div className="container mx-auto px-4">
-                            <div className="flex-wrap justify-start items-center -mx-4 md:flex">
+                            <div className="content-3-4 flex-wrap justify-start items-center -mx-4 md:flex">
                                 {dataBE?.map((be, i) => (
                                     <Course
                                         key={`${be?.name}-${i}`}
@@ -31,6 +31,7 @@ export default function DetailRoadMapUser({ dataFE, dataBE }) {
                                         name={be.name}
                                         nameMentor={be?.mentor}
                                         lesson={be?.lesson}
+                                        number={i + 1}
                                     />
                                 ))}
                             </div>
@@ -53,21 +54,24 @@ export default function DetailRoadMapUser({ dataFE, dataBE }) {
                     </div>
                     <section class="h-full w-full px-8 py-10 bg-black">
                         <div className="container mx-auto px-4">
-                            <div className="flex-wrap justify-start items-center -mx-4 md:flex">
-                                {dataFE?.map((fe, i) => (
-                                    <Course
-                                        key={`${fe?.name}-${i}`}
-                                        routeName={route(
-                                            "user.dashboard.course.show",
-                                            fe?.slug
-                                        )}
-                                        image={fe.thumbnail}
-                                        avatar={fe?.avatar}
-                                        name={fe.name}
-                                        nameMentor={fe?.mentor}
-                                        lesson={fe?.lesson}
-                                    />
-                                ))}
+                            <div className="content-3-4 flex lg:flex-row flex-col items-center lg:justify-start justify-center">
+                                <div className="flex-wrap justify-start items-center -mx-4 md:flex">
+                                    {dataFE?.map((fe, i) => (
+                                        <Course
+                                            key={`${fe?.name}-${i}`}
+                                            routeName={route(
+                                                "user.dashboard.course.show",
+                                                fe?.slug
+                                            )}
+                                            image={fe.thumbnail}
+                                            avatar={fe?.avatar}
+                                            name={fe.name}
+                                            nameMentor={fe?.mentor}
+                                            lesson={fe?.lesson}
+                                            number={i + 1}
+                                        />
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </section>

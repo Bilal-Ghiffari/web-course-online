@@ -56,9 +56,6 @@ export default function Benefit() {
                         </p>
                     </li>
                 </ul>
-                <button className="btn-fill px-10 py-4 text-base text-black font-semibold rounded-xl cursor-pointer focus:outline-none tracking-wide">
-                    Learn More
-                </button>
             </div>
         </div>
     );

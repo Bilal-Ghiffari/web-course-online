@@ -67,11 +67,11 @@ export default function Navbar({ authName }) {
                     className={`collapsible-dropdown xl:flex hidden flex-col gap-2 relative`}
                 >
                     <div
-                        className="outline outline-2 outline-gray-700 p-[5px] rounded-full w-[60px] dropdown-button cursor-pointer"
+                        className="outline outline-2 outline-gray-800 hover:outline-gray-600 p-[5px] rounded-full w-[60px] dropdown-button cursor-pointer"
                         onClick={handleTriggerOpen}
                     >
                         <img
-                            src="/images/avatar.png"
+                            src="/images/user-login.png"
                             className="rounded-full object-cover w-full"
                             alt=""
                         />

@@ -44,7 +44,7 @@ export default function ReviewUser({ nameUser, reviewUser, rating }) {
                 <div className="pt-3 flex flex-row gap-3">
                     <div className="rounded-full flex items-center">
                         <img
-                            src={"/images/avatar.png"}
+                            src={"/images/user.png"}
                             className="object-cover rounded-full w-[60px] h-[60px]"
                             alt=""
                         />
