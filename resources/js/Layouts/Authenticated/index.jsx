@@ -44,15 +44,17 @@ export default function Authenticated({ auth, course, review }) {
                 <Content />
                 <div className="container mx-auto px-4 py-[50px]">
                     <div className="text-white mb-5 mt-10">
-                        <h2 className="text-3xl font-semibold">
-                            Success Stories
-                        </h2>
+                        <h2 className="text-3xl font-semibold">Testimoni</h2>
+                        <p className="text-[17px] mt-3">
+                            Cerita mereka yang sudah mengikuti kelas
+                        </p>
                     </div>
                     <div className="flex-wrap justify-start items-center -mx-4 md:flex mt-10">
                         {review?.map((item) => (
                             <ReviewUser
-                                nameUser={auth?.user?.name}
+                                nameUser={item?.name}
                                 reviewUser={item?.comment}
+                                rating={item?.rating}
                             />
                         ))}
                     </div>

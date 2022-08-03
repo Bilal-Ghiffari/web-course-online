@@ -28,3 +28,7 @@ https://youtu.be/Tt08KmFfIYQ
 Jeff Su
 Sebagian besar saran resume dari internet bersifat subjektif karena tidak ada "satu ukuran untuk semua". Tetapi menggunakan analisis Austin Belcak terhadap 125.484 resume, saya membagikan 5 Aturan Emas tentang cara Menulis Resume yang Luar Biasa pada tahun 2022. Baik Anda membuat resume untuk pekerjaan pertama Anda, atau memperbaiki resume bagus yang telah Anda gunakan selama bertahun-tahun, sangat penting untuk mendapatkan prinsip-prinsip dasar sebelum beralih ke tip menulis resume yang lebih bagus.
 8
+
+Dalam membangun website yang dinamis (memiliki konten yang up to date) maka kita akan membutuhkan bahasa pemrograman website yaitu salah satunya adalah JavaScript. Di sini kita akan mengenal dasar-dasar penggunaan JavaScript pada website development. Dimulai dari mengenal tipe data, membuat fungsi, dan juga masih banyak yang lainnya.
+PHP adalah bahasa pemrograman web yang banyak dipakai oleh perusahaan-perusahaan besar, seperti Laravel, Codeigniter dan Wordpress PHP bersifat open-source yang dimana kita bisa menggunakan untuk membangun aplikasi lalu dapat kita komersilkan (bisnis dan sumber penghasilan).
+Node js adalah platform buatan Ryan Dahl untuk menjalankan aplikasi web berbasis JavaScript yang dikenalkan pada tahun 2009. Dengan node js kita dapat menjalankan JavaScript dari sisi server. Node js memiliki banyak banyak framework yang dapat memudahkan dan mempercepat pengerjaan pembuatan website, salah satu framework node js yaitu express js. express js adalah satu web framework paling populer di dunia Node.js

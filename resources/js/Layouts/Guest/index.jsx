@@ -4,8 +4,9 @@ import Header from "./parts/Header";
 import Content from "./parts/Content";
 import Footer from "./parts/Footer";
 import Course from "../Authenticated/partikelGlobal/Course";
+import ReviewUser from "../Authenticated/partikelGlobal/ReviewUser";
 
-export default function GuestUser({ course }) {
+export default function GuestUser({ course, review }) {
     return (
         <>
             <section className="h-full w-full border-box transition: 0.3s; transition-all duration-500 linear bg-black">
@@ -30,6 +31,23 @@ export default function GuestUser({ course }) {
                     </div>
                 </div>
                 <Content />
+                <div className="container mx-auto px-4 py-[50px]">
+                    <div className="text-white mb-5 mt-10">
+                        <h2 className="text-3xl font-semibold">Testimoni</h2>
+                        <p className="text-[17px] mt-3">
+                            Cerita mereka yang sudah mengikuti kelas
+                        </p>
+                    </div>
+                    <div className="flex-wrap justify-start items-center -mx-4 md:flex mt-10">
+                        {review?.map((item) => (
+                            <ReviewUser
+                                nameUser={item?.name}
+                                reviewUser={item?.comment}
+                                rating={item?.rating}
+                            />
+                        ))}
+                    </div>
+                </div>
             </section>
             <section className="h-full pt-20 pb-12 lg:px-24 md:px-16 sm:px-8 px-4 transition-all duration-500 linear bg-black">
                 <Footer />

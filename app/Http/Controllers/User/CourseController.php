@@ -17,6 +17,8 @@ class CourseController extends Controller
 
     public function store(Request $request){
         $dataReview = $request->validate([
+            'name' => 'required',
+            'rating' => 'required|numeric',
             'comment' => 'required',
         ]);
 
