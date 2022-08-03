@@ -10,7 +10,7 @@ export default function DetailCourse({ course }) {
         setToggleState(i);
     };
     const video_url = JSON.parse(course?.video_url);
-    console.log(video_url);
+
     return (
         <div className="flex gap-14 items-start">
             <Link href={route("user.dashboard.index")}>
@@ -27,13 +27,21 @@ export default function DetailCourse({ course }) {
                 </div>
                 <div className="mt-5 flex flex-row gap-10">
                     <div
-                        className="bg-gray-700 px-4 py-2 w-[140px] rounded-full cursor-pointer"
+                        className={`px-4 py-2 w-[140px] rounded-full cursor-pointer ${
+                            toggleState === 1
+                                ? "bg-gray-700"
+                                : "border-4 border-gray-700"
+                        }`}
                         onClick={() => toggleTab(1)}
                     >
                         <h4 className="text-white text-center">About</h4>
                     </div>
                     <div
-                        className="bg-gray-700 px-4 py-2 w-[140px] rounded-full ml-10 cursor-pointer"
+                        className={`px-4 py-2 w-[140px] rounded-full ml-5 cursor-pointer ${
+                            toggleState === 2
+                                ? "bg-gray-700"
+                                : "border-4 border-gray-700"
+                        }`}
                         onClick={() => toggleTab(2)}
                     >
                         <h4 className="text-white text-center">Review</h4>
@@ -57,24 +65,13 @@ export default function DetailCourse({ course }) {
                                     {course?.mentor}
                                 </span>
                             </div>
-                            {/* <p className="text-stream-gray text-base mt-[6px] text-white">
-                            Action •
-                        </p> */}
-                        </div>
-                        <div className="inline-flex items-center gap-[6px]">
-                            <img src="/images/ic_star.svg" alt="" />
-                            <img src="/images/ic_star.svg" alt="" />
-                            <img src="/images/ic_star.svg" alt="" />
-                            <img src="/images/ic_star.svg" alt="" />
-                            <img src="/images/ic_star.svg" alt="" />
-                            <div className="text-base text-white ml-[6px] mt-1">
-                                18,049
-                            </div>
                         </div>
                     </div>
-                    <div className="mt-5">
-                        <div className="text-xl text-white">Description</div>
-                        <p className="max-w-[700px] mt-[10px] text-stream-gray text-base text-white leading-8">
+                    <div className="mt-10">
+                        <div className="text-xl text-white font-semibold">
+                            Description
+                        </div>
+                        <p className="max-w-[700px] mt-[10px] text-stream-gray text-base text-gray-300 leading-8">
                             {course?.body}
                         </p>
                     </div>
@@ -84,9 +81,11 @@ export default function DetailCourse({ course }) {
                         </h2>
                     </div>
                     <div className="h-[700px] w-full overflow-auto">
-                        {video_url.map((_, i) => (
-                            <CourseContent key={i} id={i} course={course} />
-                        ))}
+                        {video_url
+                            .filter((val) => val !== null)
+                            .map((_, i) => (
+                                <CourseContent key={i} id={i} course={course} />
+                            ))}
                     </div>
                 </div>
                 <div className={`${toggleState === 2 ? "block" : "hidden"}`}>

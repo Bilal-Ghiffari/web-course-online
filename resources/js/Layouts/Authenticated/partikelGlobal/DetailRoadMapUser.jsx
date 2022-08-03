@@ -1,10 +1,7 @@
 import Course from "./Course";
 
 export default function DetailRoadMapUser({ dataFE, dataBE }) {
-    console.log("category", dataBE[0].category);
-    console.log("category", dataFE[0].category);
     const { pathname } = window.location;
-    console.log(window.location);
     return (
         <>
             {pathname === "/dashboard/roadmap/Back-End%20Developer" && (

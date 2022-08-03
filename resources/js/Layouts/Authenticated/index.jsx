@@ -1,14 +1,17 @@
 import React from "react";
 import Navbar from "./parts/Navbar";
-import Header from "./parts/Header";
+import Header from "./partikelGlobal/Header";
 import Content from "./parts/Content";
 import Footer from "./parts/Footer";
 import Course from "./partikelGlobal/Course";
 import ReviewUser from "./partikelGlobal/ReviewUser";
 
 export default function Authenticated({ auth, course, review }) {
-    console.log("auth", auth);
-    console.log("review", review);
+    function countTheObject(arr) {
+        return arr.reduce((next, current) => {
+            return current !== null ? next + 1 : next;
+        }, 0);
+    }
     return (
         <>
             <section className="h-full w-full border-box transition: 0.3s; transition-all duration-500 linear bg-black">
@@ -17,7 +20,7 @@ export default function Authenticated({ auth, course, review }) {
                     <Header />
                 </div>
             </section>
-            <section class="h-full w-full px-8 py-20 bg-black">
+            <section className="h-full w-full px-8 py-20 bg-black">
                 <div className="container mx-auto px-4 py-[50px]">
                     <div className="text-white text-center mb-10">
                         <h2 className="text-3xl font-semibold">
@@ -25,9 +28,9 @@ export default function Authenticated({ auth, course, review }) {
                         </h2>
                     </div>
                     <div className="flex-wrap justify-start items-center -mx-4 md:flex">
-                        {course.map((item) => (
+                        {course.map((item, i) => (
                             <Course
-                                key={`${item?.name}-${item?.id}`}
+                                key={`${item?.name}-${i}`}
                                 routeName={route(
                                     "user.dashboard.course.show",
                                     item?.slug
@@ -36,7 +39,9 @@ export default function Authenticated({ auth, course, review }) {
                                 avatar={item?.avatar}
                                 name={item.name}
                                 nameMentor={item?.mentor}
-                                lesson={item?.lesson}
+                                lesson={countTheObject(
+                                    JSON.parse(item?.video_url)
+                                )}
                             />
                         ))}
                     </div>
@@ -50,8 +55,9 @@ export default function Authenticated({ auth, course, review }) {
                         </p>
                     </div>
                     <div className="flex-wrap justify-start items-center -mx-4 md:flex mt-10">
-                        {review?.map((item) => (
+                        {review?.map((item, i) => (
                             <ReviewUser
+                                key={`${item?.name}-${i}`}
                                 nameUser={item?.name}
                                 reviewUser={item?.comment}
                                 rating={item?.rating}

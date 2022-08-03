@@ -1,10 +1,13 @@
+import { UserMenu } from "@/Layouts/Authenticated/partikelGlobal/LinkMenuNavbar";
+import MenuListLinkNavbar from "@/Layouts/Authenticated/partikelGlobal/MenuListLinkNavbar";
+
 export default function LinkMenuNavbar({ toggleMainMenu, setToggleMainMenu }) {
     return (
         <nav
             className={`navigation lg:mr-auto lg:flex flex-col text-base justify-center z-50 fixed top-8 left-3 right-3 p-8 rounded-md shadow-md bg-white lg:flex lg:flex-row lg:relative lg:top-0 lg:shadow-none bg-popup lg:bg-transparent lg:p-0 lg:items-center items-start ${
                 toggleMainMenu ? "flex" : "hidden"
             }
-                    `}
+            `}
         >
             <a href="#">
                 <img
@@ -13,36 +16,14 @@ export default function LinkMenuNavbar({ toggleMainMenu, setToggleMainMenu }) {
                     alt=""
                 />
             </a>
-            <a
-                className="text-lg text-white font-semibold leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative active"
-                href="#"
-            >
-                Home
-            </a>
-            <a
-                className="text-lg font-light leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative"
-                href="#"
-            >
-                Feature
-            </a>
-            <a
-                className="text-lg font-light leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative"
-                href="#"
-            >
-                Pricing
-            </a>
-            <a
-                className="text-lg font-light leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative"
-                href="#"
-            >
-                About Us
-            </a>
-            <a
-                className="text-lg font-light leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative"
-                href="#"
-            >
-                Contact
-            </a>
+            {UserMenu.map((item, i) => (
+                <MenuListLinkNavbar
+                    key={`${item?.linkName}-${i}`}
+                    link={item?.link}
+                    name={item?.linkName}
+                    isActive={item?.link && route().current(item?.link)}
+                />
+            ))}
             {/* mobile */}
             <div className="flex items-center justify-end w-full lg:hidden mt-3">
                 <button className="btn-log font-light py-3 px-8 focus:outline-none">

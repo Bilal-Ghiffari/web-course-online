@@ -3,6 +3,7 @@ import { Link, useForm } from "@inertiajs/inertia-react";
 import Input from "@/Components/Input";
 import Label from "@/Components/Label";
 import Button from "@/Components/Button";
+import ValidationErrors from "@/Components/ValidationErrors";
 
 export default function Login() {
     const { data, setData, post, processing, reset, errors } = useForm({
@@ -44,13 +45,14 @@ export default function Login() {
                                 />
                             </div>
                             <h3 className="text-3xl font-semibold mb-3 text-medium-white">
-                                Log In to continue
+                                Sign in to continue
                             </h3>
                             <p className="leading-7 text-sm text-gray">
-                                Please log in using that account has
+                                Silahkan masuk menggunakan akun
                                 <br />
-                                registered on the website.
+                                yang telah terdaftar di website.
                             </p>
+                            <ValidationErrors errors={errors} />
                             <form className="mt-6" onSubmit={submitForm}>
                                 <div className="mb-7">
                                     <Label
@@ -146,12 +148,12 @@ export default function Login() {
                                 </Button>
                             </form>
                             <p className="mt-8 text-center text-sm text-gray">
-                                Don't have an account yet?
+                                Belum punya akun ?{" "}
                                 <Link
                                     href={route("register")}
                                     className="font-medium hover:underline text-green"
                                 >
-                                    Register Here
+                                    Daftar Disini
                                 </Link>
                             </p>
                         </div>

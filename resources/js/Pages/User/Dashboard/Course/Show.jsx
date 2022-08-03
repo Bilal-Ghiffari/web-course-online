@@ -2,7 +2,6 @@ import Navbar from "@/Layouts/Authenticated/parts/Navbar";
 import Footer from "@/Layouts/Authenticated/parts/Footer";
 import DetailCourse from "./parts/DetailCourse";
 export default function Show({ auth, course }) {
-    console.log("course", course);
     return (
         <>
             <section className="h-full w-full border-box transition: 0.3s; transition-all duration-500 linear bg-black">

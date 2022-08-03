@@ -5,8 +5,7 @@ import TextArea from "@/Components/TextArea";
 import Input from "@/Components/Input";
 
 export default function Review({ course }) {
-    // console.log("ctn", course);
-    const { data, setData, post, reset, errors, processing } = useForm({
+    const { data, setData, post, reset, processing } = useForm({
         name: "",
         rating: 1,
         comment: "",
@@ -19,7 +18,6 @@ export default function Review({ course }) {
     const submit = (e) => {
         e.preventDefault();
         reset("comment", "name", "rating");
-        // console.log(data);
         post(route("user.dashboard.course.show.store", course?.slug));
     };
     return (
@@ -35,7 +33,7 @@ export default function Review({ course }) {
                     name={"name"}
                     value={data.name}
                     className={
-                        "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        "text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-[#1a1a1b] dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     }
                     handleChange={handleInputValue}
                 />
@@ -51,7 +49,7 @@ export default function Review({ course }) {
                     name={"rating"}
                     value={data.rating}
                     className={
-                        "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        "text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-[#1a1a1b] dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     }
                     handleChange={handleInputValue}
                 />
@@ -67,7 +65,6 @@ export default function Review({ course }) {
                     value={data.comment}
                     id={"comment"}
                     handleChange={handleInputValue}
-                    // isError={errors.body}
                 ></TextArea>
             </div>
             <Button

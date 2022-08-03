@@ -2,9 +2,7 @@ import Navbar from "@/Layouts/Authenticated/parts/Navbar";
 import Footer from "@/Layouts/Authenticated/parts/Footer";
 import DetailRoadMapUser from "@/Layouts/Authenticated/partikelGlobal/DetailRoadMapUser";
 
-export default function Jouney({ auth, frontEnd, backEnd, course }) {
-    console.log("fe", frontEnd);
-    console.log("be", backEnd);
+export default function Jouney({ auth, frontEnd, backEnd }) {
     return (
         <>
             <section className="h-full w-full border-box transition: 0.3s; transition-all duration-500 linear bg-black">

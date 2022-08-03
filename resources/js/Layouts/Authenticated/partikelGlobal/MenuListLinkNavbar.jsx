@@ -1,6 +1,6 @@
 import { Link } from "@inertiajs/inertia-react";
 
-export default function MenuListLink({ link, name, isActive }) {
+export default function MenuListLinkNavbar({ link, name, isActive }) {
     return (
         <Link
             href={link ? route(link) : null}

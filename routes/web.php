@@ -24,6 +24,7 @@ use Inertia\Inertia;
 
 
 Route::get('/', [GuestController::class, 'index'])->middleware('guest');
+
 Route::middleware(['auth', 'role:user'])
     ->prefix('dashboard')
     ->name('user.dashboard.')

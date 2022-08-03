@@ -1,6 +1,6 @@
 import { Link } from "@inertiajs/inertia-react";
-import { UserMenu } from "./LinkMenu";
-import MenuListLink from "./MenuListLink";
+import { UserMenu } from "../../partikelGlobal/LinkMenuNavbar";
+import MenuListLinkNavbar from "../../partikelGlobal/MenuListLinkNavbar";
 export default function ListMenuNavbar({
     toggleMainMenu,
     setToggleMainMenu,
@@ -22,7 +22,7 @@ export default function ListMenuNavbar({
                 />
             </a>
             {UserMenu.map((item, index) => (
-                <MenuListLink
+                <MenuListLinkNavbar
                     key={`${item.linkName}-${index}`}
                     name={item.linkName}
                     link={item.link}

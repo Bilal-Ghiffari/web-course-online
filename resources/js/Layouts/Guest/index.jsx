@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./parts/Navbar";
-import Header from "./parts/Header";
+import Header from "../Authenticated/partikelGlobal/Header";
 import Content from "./parts/Content";
 import Footer from "./parts/Footer";
 import Course from "../Authenticated/partikelGlobal/Course";
@@ -17,9 +17,15 @@ export default function GuestUser({ course, review }) {
             </section>
             <section className="h-full w-full border-box bg-black">
                 <div className="container mx-auto px-4 py-[50px]">
+                    <div className="text-white text-center mb-10">
+                        <h2 className="text-3xl font-semibold">
+                            Jelajahi Kursus Terbaik Kami
+                        </h2>
+                    </div>
                     <div className="flex-wrap justify-start items-center -mx-4 md:flex">
-                        {course.map((item) => (
+                        {course.map((item, i) => (
                             <Course
+                                key={`${item?.name}-${i}`}
                                 routeName={route("login")}
                                 image={item.thumbnail}
                                 avatar={item?.avatar}
@@ -39,8 +45,9 @@ export default function GuestUser({ course, review }) {
                         </p>
                     </div>
                     <div className="flex-wrap justify-start items-center -mx-4 md:flex mt-10">
-                        {review?.map((item) => (
+                        {review?.map((item, i) => (
                             <ReviewUser
+                                key={`${item?.name}-${i}`}
                                 nameUser={item?.name}
                                 reviewUser={item?.comment}
                                 rating={item?.rating}

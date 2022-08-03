@@ -1,5 +1,4 @@
 export default function ReviewUser({ nameUser, reviewUser, rating }) {
-    console.log("rating", rating);
     const starRating = () => {
         if (rating === 1) {
             return <img src="/images/ic_star.svg" alt="" />;

@@ -1,7 +1,6 @@
 import Button from "@/Components/Button";
 import { Link } from "@inertiajs/inertia-react";
 export default function ListCourse({ data }) {
-    console.log("data", data);
     return (
         <table className="table-fixed w-full text-center text-white mt-10">
             <thead>
