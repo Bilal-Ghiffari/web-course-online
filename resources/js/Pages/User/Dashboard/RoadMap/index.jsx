@@ -1,3 +1,4 @@
+import { Head } from "@inertiajs/inertia-react";
 import Navbar from "@/Layouts/Authenticated/parts/Navbar";
 import Footer from "@/Layouts/Authenticated/parts/Footer";
 import RoadMapUser from "@/Layouts/Authenticated/partikelGlobal/RoadMapUser";
@@ -6,6 +7,7 @@ import { ListRoadMap } from "@/Layouts/Authenticated/partikelGlobal/ListRoadMap"
 export default function RoadMap({ auth, course }) {
     return (
         <>
+            <Head title="Alur Belajar | Roadmap" />
             <section className="h-full w-full border-box transition: 0.3s; transition-all duration-500 linear bg-black">
                 <div className="header-2-4">
                     <Navbar authName={auth?.user} />

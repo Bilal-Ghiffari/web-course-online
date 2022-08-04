@@ -1,4 +1,4 @@
-import React from "react";
+import { Head } from "@inertiajs/inertia-react";
 import Navbar from "./parts/Navbar";
 import Header from "./partikelGlobal/Header";
 import Content from "./parts/Content";
@@ -14,6 +14,13 @@ export default function Authenticated({ auth, course, review }) {
     }
     return (
         <>
+            <Head title="Belajar Online">
+                <link
+                    rel="icon"
+                    type="image/png"
+                    href="http://api.elements.buildwithangga.com/storage/files/2/assets/Header/Header2/Header-2-4.png"
+                />
+            </Head>
             <section className="h-full w-full border-box transition: 0.3s; transition-all duration-500 linear bg-black">
                 <div className="header-2-4">
                     <Navbar authName={auth?.user} />
