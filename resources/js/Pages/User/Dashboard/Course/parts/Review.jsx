@@ -40,7 +40,7 @@ export default function Review({ course }) {
             </div>
             <Label
                 forInput={"rating"}
-                value={"Rating"}
+                value={"Rating (batas 5 rating)"}
                 className={"mt-4 text-white text-base block mb-2"}
             />
             <div className="w-1/2">
@@ -51,6 +51,10 @@ export default function Review({ course }) {
                     className={
                         "text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-[#1a1a1b] dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     }
+                    min={"1"}
+                    max={"5"}
+                    maxLength={"1"}
+                    minLength={"1"}
                     handleChange={handleInputValue}
                 />
             </div>

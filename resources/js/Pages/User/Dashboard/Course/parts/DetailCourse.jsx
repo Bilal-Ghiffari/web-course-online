@@ -3,6 +3,11 @@ import ReactPlayer from "react-player";
 import { Link } from "@inertiajs/inertia-react";
 import CourseContent from "./CourseContent";
 import Review from "./Review";
+import {
+    ToolHtmlCss,
+    ToolJavascriptDevelopment,
+    ToolPhpWebDevelopment,
+} from "./Tools";
 
 export default function DetailCourse({ course }) {
     const [toggleState, setToggleState] = useState(1);
@@ -11,6 +16,18 @@ export default function DetailCourse({ course }) {
     };
     const video_url = JSON.parse(course?.video_url);
 
+    const toolsOnCourse = () => {
+        if (course?.name === "HTML & CSS 5") {
+            return <ToolHtmlCss />;
+        } else if (course?.name === "Php Dasar Web Development") {
+            return <ToolPhpWebDevelopment />;
+        } else if (
+            course?.name === "Vanilla Javascript Pada Website Development" ||
+            "Node Javascript Dasar"
+        ) {
+            return <ToolJavascriptDevelopment />;
+        }
+    };
     return (
         <div className="flex gap-14 items-start">
             <Link href={route("user.dashboard.index")}>
@@ -29,8 +46,8 @@ export default function DetailCourse({ course }) {
                     <div
                         className={`px-4 py-2 w-[140px] rounded-full cursor-pointer ${
                             toggleState === 1
-                                ? "bg-gray-700"
-                                : "border-4 border-gray-700"
+                                ? "bg-[#495057]"
+                                : "border-4 border-[#495057]"
                         }`}
                         onClick={() => toggleTab(1)}
                     >
@@ -39,10 +56,20 @@ export default function DetailCourse({ course }) {
                     <div
                         className={`px-4 py-2 w-[140px] rounded-full ml-5 cursor-pointer ${
                             toggleState === 2
-                                ? "bg-gray-700"
-                                : "border-4 border-gray-700"
+                                ? "bg-[#495057]"
+                                : "border-4 border-[#495057]"
                         }`}
                         onClick={() => toggleTab(2)}
+                    >
+                        <h4 className="text-white text-center">Tools</h4>
+                    </div>
+                    <div
+                        className={`w-[140px] px-4 py-2 rounded-full ml-5 cursor-pointer ${
+                            toggleState === 3
+                                ? "bg-[#495057]"
+                                : "border-4 border-[#495057]"
+                        }`}
+                        onClick={() => toggleTab(3)}
                     >
                         <h4 className="text-white text-center">Review</h4>
                     </div>
@@ -89,6 +116,14 @@ export default function DetailCourse({ course }) {
                     </div>
                 </div>
                 <div className={`${toggleState === 2 ? "block" : "hidden"}`}>
+                    <div className="mb-5">
+                        <h4 className="text-white font-semibold text-[28px]">
+                            Tools Pendukung
+                        </h4>
+                    </div>
+                    {toolsOnCourse()}
+                </div>
+                <div className={`${toggleState === 3 ? "block" : "hidden"}`}>
                     <Review course={course} />
                 </div>
             </div>

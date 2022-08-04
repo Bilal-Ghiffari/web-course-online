@@ -57,3 +57,18 @@ select:focus .footer-2-4 .list-footer li a {
 .input-error {
     @apply ring ring-red-600;
 }
+
+.btn-tools {
+    background-image: linear-gradient(
+        rgba(208, 254, 123, 1),
+        rgba(163, 252, 158, 1)
+    );
+}
+
+.btn-tools:hover {
+    background-image: linear-gradient(
+        rgb(182, 245, 65, 1),
+        rgb(89, 247, 81, 1)
+    );
+    color: #ffff;
+}
