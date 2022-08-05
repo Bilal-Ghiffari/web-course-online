@@ -16,8 +16,8 @@ export default function ListMenuNavbar({
         >
             <a href="#">
                 <img
-                    className="m-0 lg:hidden mb-3"
-                    src="http://api.elements.buildwithangga.com/storage/files/2/assets/Header/Header2/Header-2-4.png"
+                    className="m-0 lg:hidden mb-3 w-10 h-10"
+                    src="/images/logo-course.png"
                     alt=""
                 />
             </a>

@@ -17,14 +17,11 @@ export default function DetailCourse({ course }) {
     const video_url = JSON.parse(course?.video_url);
 
     const toolsOnCourse = () => {
-        if (course?.name === "HTML & CSS 5") {
+        if (course?.name === "HTML 5 Dasar") {
             return <ToolHtmlCss />;
         } else if (course?.name === "Php Dasar Web Development") {
             return <ToolPhpWebDevelopment />;
-        } else if (
-            course?.name === "Vanilla Javascript Pada Website Development" ||
-            "Node Javascript Dasar"
-        ) {
+        } else if (course?.name === "Javascript Dasar" || "Node Javascript") {
             return <ToolJavascriptDevelopment />;
         }
     };

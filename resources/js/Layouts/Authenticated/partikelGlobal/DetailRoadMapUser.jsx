@@ -16,7 +16,7 @@ export default function DetailRoadMapUser({ dataFE, dataBE }) {
                             pengembang backend modern pada tahun 2022
                         </p>
                     </div>
-                    <section class="h-full w-full px-8 py-10 bg-black">
+                    <section className="h-full w-full px-8 py-10 bg-black">
                         <div className="container mx-auto px-4">
                             <div className="content-3-4 flex-wrap justify-start items-center -mx-4 md:flex">
                                 {dataBE?.map((be, i) => (
@@ -52,7 +52,7 @@ export default function DetailRoadMapUser({ dataFE, dataBE }) {
                             pengembang frontend modern pada tahun 2022
                         </p>
                     </div>
-                    <section class="h-full w-full px-8 py-10 bg-black">
+                    <section className="h-full w-full px-8 py-10 bg-black">
                         <div className="container mx-auto px-4">
                             <div className="content-3-4 flex lg:flex-row flex-col items-center lg:justify-start justify-center">
                                 <div className="flex-wrap justify-start items-center -mx-4 md:flex">

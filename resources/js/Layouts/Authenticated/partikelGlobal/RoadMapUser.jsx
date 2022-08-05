@@ -1,6 +1,12 @@
 import { Link } from "@inertiajs/inertia-react";
 
-export default function RoadMapUser({ frontend, name, image, classAvailable }) {
+export default function RoadMapUser({
+    frontend,
+    name,
+    image,
+    classAvailableFE,
+    classAvailableBE,
+}) {
     return (
         <>
             {!frontend && (
@@ -22,7 +28,7 @@ export default function RoadMapUser({ frontend, name, image, classAvailable }) {
                         </Link>
                         <div className="pt-[10px] flex justify-center text-white">
                             <span className="text-[15px]">
-                                {classAvailable}
+                                Tersedia {classAvailableBE} Kelas
                             </span>
                         </div>
                     </div>
@@ -48,7 +54,7 @@ export default function RoadMapUser({ frontend, name, image, classAvailable }) {
                         </Link>
                         <div className="pt-[10px] flex justify-center text-white">
                             <span className="text-[15px]">
-                                {classAvailable}
+                                Tersedia {classAvailableFE} Kelas
                             </span>
                         </div>
                     </div>

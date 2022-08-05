@@ -9,7 +9,6 @@ export default function Course({
     number,
 }) {
     const { pathname } = window.location;
-    console.log(pathname);
     return (
         <div className="px-3 w-[320px]">
             <span

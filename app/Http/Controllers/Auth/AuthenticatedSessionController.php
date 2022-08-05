@@ -37,15 +37,15 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        if(Auth::user()->roles->pluck('admin')){
-            return redirect(route("admin.dashboard.course.index"));
-        }
+        // if(Auth::user()->roles->pluck('admin')){
+        //     return redirect(route("admin.dashboard.course.index"));
+        // }
 
-        if(Auth::user()->roles->pluck('user')){
-            return redirect(route('user.dashboard.index'));
-        }
+        // if(Auth::user()->roles->pluck('user')){
+        //     return redirect(route('user.dashboard.index'));
+        // }
 
-        // return redirect()->intended(RouteServiceProvider::HOME);
+        return redirect()->intended(RouteServiceProvider::HOME);
         
     }
 

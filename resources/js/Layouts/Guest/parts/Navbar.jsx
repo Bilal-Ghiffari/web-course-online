@@ -9,7 +9,8 @@ export default function Navbar() {
             <div className="mx-auto flex py-12 lg:px-24 md:px-16 sm:px-8 px-8 items-center justify-between lg:justify-start">
                 <a href="#">
                     <img
-                        src="http://api.elements.buildwithangga.com/storage/files/2/assets/Header/Header2/Header-2-4.png"
+                        src="/images/logo-course.png"
+                        className="w-[50px] h-[50px] bg-cover bg-center"
                         alt=""
                     />
                 </a>
@@ -49,11 +50,15 @@ export default function Navbar() {
                         href={route("login")}
                         as="button"
                     >
-                        Log In
+                        Masuk
                     </Link>
-                    <button className="btn-try inline-flex text-black text-lg leading-7 py-3 px-8 rounded-xl focus:outline-none box-shadow font-semibold">
-                        Try Now
-                    </button>
+                    <Link
+                        href={route("register")}
+                        as="button"
+                        className="btn-try inline-flex text-black text-lg leading-7 py-3 px-8 rounded-xl focus:outline-none box-shadow font-semibold"
+                    >
+                        Daftar
+                    </Link>
                 </div>
             </div>
         </header>

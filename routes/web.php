@@ -42,7 +42,7 @@ Route::middleware(['auth', 'role:user'])
         ->name('course.show.content');
 
         Route::get('roadmap', [RoadMapController::class, 'roadmap'])
-        ->name('roadmap');
+        ->name('roadmap*');
 
         Route::get('roadmap/{course:category}', [RoadMapDetailController::class, 'journey'])
         ->name('roadmap.journey');
@@ -56,3 +56,10 @@ Route::middleware(['auth', 'role:admin'])
     });
 
 require __DIR__.'/auth.php';
+
+// env production build
+// APP_NAME=Course
+// APP_ENV=production
+// APP_KEY=base64:0BHcLjgr5BKBpLs5HeA9CXEoyefvjfmziDHhigSupMk=
+// APP_DEBUG=false
+// APP_URL=https://belajar-online.com

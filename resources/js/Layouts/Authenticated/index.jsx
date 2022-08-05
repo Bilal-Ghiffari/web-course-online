@@ -12,13 +12,14 @@ export default function Authenticated({ auth, course, review }) {
             return current !== null ? next + 1 : next;
         }, 0);
     }
+
     return (
         <>
             <Head title="Belajar Online">
                 <link
                     rel="icon"
                     type="image/png"
-                    href="http://api.elements.buildwithangga.com/storage/files/2/assets/Header/Header2/Header-2-4.png"
+                    href="/images/logo-course.png"
                 />
             </Head>
             <section className="h-full w-full border-box transition: 0.3s; transition-all duration-500 linear bg-black">
@@ -56,13 +57,15 @@ export default function Authenticated({ auth, course, review }) {
                 <Content />
                 <div className="container mx-auto px-4 py-[50px]">
                     <div className="text-white mb-5 mt-10">
-                        <h2 className="text-3xl font-semibold">Testimoni</h2>
-                        <p className="text-[17px] mt-3">
+                        <h2 className="text-3xl font-semibold flex justify-center">
+                            Testimoni
+                        </h2>
+                        <p className="text-[17px] mt-3 flex justify-center">
                             Cerita mereka yang sudah mengikuti kelas
                         </p>
                     </div>
-                    <div className="flex-wrap justify-start items-center -mx-4 md:flex mt-10">
-                        {review?.map((item, i) => (
+                    <div className="flex-wrap justify-center items-center -mx-4 md:flex mt-10">
+                        {review?.slice(0, 3)?.map((item, i) => (
                             <ReviewUser
                                 key={`${item?.name}-${i}`}
                                 nameUser={item?.name}

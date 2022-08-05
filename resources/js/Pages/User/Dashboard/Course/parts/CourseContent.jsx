@@ -21,11 +21,11 @@ export default function CourseContent({ course, id }) {
                                 )}
                             >
                                 <h3 className="font-semibold text-white">
-                                    Css Responsive
+                                    {course?.name}
                                 </h3>
                             </Link>
                             <h3 className="text-sm text-gray-400">
-                                mengenal css responsive pada aplikasi kita
+                                {course?.category}
                             </h3>
                         </div>
                     </div>

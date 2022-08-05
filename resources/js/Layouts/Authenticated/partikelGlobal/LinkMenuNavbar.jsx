@@ -4,42 +4,19 @@ export const UserMenu = [
         linkName: "Home",
     },
     {
-        link: "user.dashboard.roadmap",
+        link: "user.dashboard.roadmap*",
         linkName: "Alur Belajar",
     },
     {
         link: null,
-        linkName: "Pricing",
+        linkName: "Kelas Online",
     },
     {
         link: null,
-        linkName: "About Us",
+        linkName: "Tentang Kami",
     },
     {
         link: null,
-        linkName: "Contact",
-    },
-];
-
-export const UserGuest = [
-    {
-        link: "user.dashboard.index",
-        linkName: "Home",
-    },
-    {
-        link: "roadmap",
-        linkName: "Alur Belajar",
-    },
-    {
-        link: null,
-        linkName: "Pricing",
-    },
-    {
-        link: null,
-        linkName: "About Us",
-    },
-    {
-        link: null,
-        linkName: "Contact",
+        linkName: "Flash Sale",
     },
 ];

@@ -120,7 +120,7 @@ export default function ComponentFooter() {
                     </a>
                 </nav>
                 <nav className="flex lg:flex-row flex-col items-center text-base justify-center">
-                    <p>Copyright © 2021 Analystic Max</p>
+                    <p>Copyright © 2022 Belajar Online</p>
                 </nav>
             </div>
         </div>

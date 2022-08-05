@@ -4,7 +4,12 @@ import Footer from "@/Layouts/Authenticated/parts/Footer";
 import RoadMapUser from "@/Layouts/Authenticated/partikelGlobal/RoadMapUser";
 import { ListRoadMap } from "@/Layouts/Authenticated/partikelGlobal/ListRoadMap";
 
-export default function RoadMap({ auth, course }) {
+export default function RoadMap({
+    auth,
+    course,
+    classAvailableFE,
+    classAvailableBE,
+}) {
     return (
         <>
             <Head title="Alur Belajar | Roadmap" />
@@ -26,7 +31,8 @@ export default function RoadMap({ auth, course }) {
                                     key={i}
                                     name={roadmap?.name}
                                     image={roadmap?.image}
-                                    classAvailable={roadmap?.classAvailable}
+                                    classAvailableFE={classAvailableFE?.length}
+                                    classAvailableBE={classAvailableBE?.length}
                                     frontend={
                                         course?.category ===
                                         "Front-End Developer"

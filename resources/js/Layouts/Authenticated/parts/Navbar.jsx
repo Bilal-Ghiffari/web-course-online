@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { Link } from "@inertiajs/inertia-react";
 import ListMenuNavbar from "./partikel/ListMenuNavbar";
 import LinkMenuDropdown from "./partikel/LinkMenuDropdown";
 
@@ -20,12 +21,13 @@ export default function Navbar({ authName }) {
     return (
         <header>
             <div className="mx-auto flex py-12 lg:px-24 md:px-16 sm:px-8 px-8 items-center justify-between lg:justify-start">
-                <a href="#">
+                <Link href={route("user.dashboard.index")}>
                     <img
-                        src="http://api.elements.buildwithangga.com/storage/files/2/assets/Header/Header2/Header-2-4.png"
+                        src="/images/logo-course.png"
+                        className="w-[50px] h-[50px] bg-cover bg-center"
                         alt=""
                     />
-                </a>
+                </Link>
                 <div className="flex mr-0 lg:hidden cursor-pointer">
                     <button onClick={() => setToggleMainMenu((prev) => !prev)}>
                         <svg

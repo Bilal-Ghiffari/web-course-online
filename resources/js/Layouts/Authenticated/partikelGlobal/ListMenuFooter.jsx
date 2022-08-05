@@ -5,7 +5,8 @@ export default function ListMenuFooter() {
                 <div className="">
                     <div className="mb-5">
                         <img
-                            src="http://api.elements.buildwithangga.com/storage/files/2/assets/Header/Header2/Header-2-4.png"
+                            src="/images/logo-course.png"
+                            className="w-[45px] h-[45px] bg-cover bg-center"
                             alt=""
                         />
                     </div>
